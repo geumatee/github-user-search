@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GitHub User Search</string>
+    <string name="search">Search</string>
+    <string name="search_placeholder">Search GitHub User</string>
+    <string name="clear_search_text_content_desc">Clear search text</string>
+    <string name="something_went_wrong">Something went wrong!</string>
+    <string name="no_results">There is no user record corresponding to this query.</string>
+    <string name="retry">Retry</string>
+    <string name="user_avatar_content_description">%1$s\'s avatar</string>
+    <string name="back">Back</string>
+    <string name="star_image_description">star</string>
+</resources>
