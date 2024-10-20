@@ -2,6 +2,8 @@
 
 This Android application demonstrates searching for GitHub users and exploring their profiles, built with modern Kotlin libraries.
 
+[![screenshot](screenshot/screenshot.png)](screenshot/screen_recording.webm)
+
 ## Features
 
 - Search for GitHub users
