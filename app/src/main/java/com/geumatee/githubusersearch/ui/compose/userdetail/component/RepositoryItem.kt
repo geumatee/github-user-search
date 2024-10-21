@@ -1,4 +1,4 @@
-package com.geumatee.githubusersearch.ui.compose.userdetail.compose
+package com.geumatee.githubusersearch.ui.compose.userdetail.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column

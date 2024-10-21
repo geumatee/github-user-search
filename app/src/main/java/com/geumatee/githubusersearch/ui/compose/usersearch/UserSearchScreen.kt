@@ -32,8 +32,8 @@ import com.geumatee.githubusersearch.R
 import com.geumatee.githubusersearch.core.model.User
 import com.geumatee.githubusersearch.ui.compose.common.NoResult
 import com.geumatee.githubusersearch.ui.compose.common.RefreshError
-import com.geumatee.githubusersearch.ui.compose.usersearch.compose.SearchTextField
-import com.geumatee.githubusersearch.ui.compose.usersearch.compose.UserList
+import com.geumatee.githubusersearch.ui.compose.usersearch.component.SearchTextField
+import com.geumatee.githubusersearch.ui.compose.usersearch.component.UserList
 import kotlinx.coroutines.flow.flowOf
 
 

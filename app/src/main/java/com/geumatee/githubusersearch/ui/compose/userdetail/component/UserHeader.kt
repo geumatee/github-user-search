@@ -1,4 +1,4 @@
-package com.geumatee.githubusersearch.ui.compose.userdetail.compose
+package com.geumatee.githubusersearch.ui.compose.userdetail.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

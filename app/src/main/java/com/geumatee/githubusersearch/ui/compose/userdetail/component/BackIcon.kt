@@ -1,4 +1,4 @@
-package com.geumatee.githubusersearch.ui.compose.userdetail.compose
+package com.geumatee.githubusersearch.ui.compose.userdetail.component
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack

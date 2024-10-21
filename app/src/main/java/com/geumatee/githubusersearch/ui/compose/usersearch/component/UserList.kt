@@ -1,4 +1,4 @@
-package com.geumatee.githubusersearch.ui.compose.usersearch.compose
+package com.geumatee.githubusersearch.ui.compose.usersearch.component
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn

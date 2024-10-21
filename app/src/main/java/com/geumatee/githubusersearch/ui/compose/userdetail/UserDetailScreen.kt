@@ -27,10 +27,10 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.geumatee.githubusersearch.core.model.Repository
 import com.geumatee.githubusersearch.core.model.UserDetail
-import com.geumatee.githubusersearch.ui.compose.userdetail.compose.BackIcon
-import com.geumatee.githubusersearch.ui.compose.userdetail.compose.UserDetailView
-import com.geumatee.githubusersearch.ui.compose.userdetail.compose.UserHeader
-import com.geumatee.githubusersearch.ui.compose.userdetail.compose.repositoryList
+import com.geumatee.githubusersearch.ui.compose.userdetail.component.BackIcon
+import com.geumatee.githubusersearch.ui.compose.userdetail.component.UserDetailView
+import com.geumatee.githubusersearch.ui.compose.userdetail.component.UserHeader
+import com.geumatee.githubusersearch.ui.compose.userdetail.component.repositoryList
 import com.geumatee.githubusersearch.ui.compose.userdetail.model.UserDetailState
 import kotlinx.coroutines.flow.flowOf
 import java.text.DecimalFormat

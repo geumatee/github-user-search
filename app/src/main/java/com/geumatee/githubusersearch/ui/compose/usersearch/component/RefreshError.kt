@@ -1,4 +1,4 @@
-package com.geumatee.githubusersearch.ui.compose.usersearch.compose
+package com.geumatee.githubusersearch.ui.compose.usersearch.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
