@@ -91,3 +91,29 @@ private fun RepositoryItemPreview() {
         onClick = {}
     )
 }
+
+@Preview(showBackground = true)
+@Composable
+private fun RepositoryItemNoDescriptionPreview() {
+    RepositoryItem(
+        name = "No Description",
+        language = "Go",
+        description = null,
+        stargazersCount = "0",
+        htmlUrl = "https://github.com/google",
+        onClick = {}
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun RepositoryItemLongNameDescriptionPreview() {
+    RepositoryItem(
+        name = "This is very long name of the repository",
+        language = "JavaScript",
+        description = "This is very very very very long description of the repository",
+        stargazersCount = "46,292",
+        htmlUrl = "https://github.com/google",
+        onClick = {}
+    )
+}

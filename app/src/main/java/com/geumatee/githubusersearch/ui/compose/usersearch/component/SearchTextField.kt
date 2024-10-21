@@ -110,3 +110,9 @@ internal fun SearchTextField(
 private fun SearchTextFieldPreview() {
     SearchTextField(query = "", onQueryChanged = {})
 }
+
+@Preview
+@Composable
+private fun SearchTextFieldWithTextPreview() {
+    SearchTextField(query = "query", onQueryChanged = {})
+}

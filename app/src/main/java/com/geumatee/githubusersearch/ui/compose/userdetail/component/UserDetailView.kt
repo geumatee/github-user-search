@@ -89,3 +89,27 @@ private fun UserDetailViewPreview() {
         following = 0
     )
 }
+
+@Preview
+@Composable
+private fun UserDetailViewLoadingPreview() {
+    UserDetailView(
+        isLoading = true,
+        error = null,
+        name = null,
+        followers = 0,
+        following = 0
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun UserDetailViewErrorPreview() {
+    UserDetailView(
+        isLoading = false,
+        error = "Something went wrong",
+        name = null,
+        followers = 0,
+        following = 0
+    )
+}

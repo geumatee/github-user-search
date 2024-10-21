@@ -55,6 +55,11 @@ private fun UserListPreview() {
                         login = "geumatee",
                         id = 1,
                         avatarUrl = "https://avatars.githubusercontent.com/u/1?v=4"
+                    ),
+                    User(
+                        login = "Google",
+                        id = 2,
+                        avatarUrl = "https://avatars.githubusercontent.com/u/1?v=4"
                     )
                 ),
                 sourceLoadStates =
