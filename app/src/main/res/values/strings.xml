@@ -9,4 +9,6 @@
     <string name="user_avatar_content_description">%1$s\'s avatar</string>
     <string name="back">Back</string>
     <string name="star_image_description">star</string>
+    <string name="followers">followers</string>
+    <string name="following">following</string>
 </resources>
