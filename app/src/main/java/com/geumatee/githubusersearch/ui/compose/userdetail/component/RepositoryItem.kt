@@ -37,14 +37,14 @@ internal fun RepositoryItem(
                     name,
                     style = MaterialTheme.typography.bodyLarge,
                     overflow = TextOverflow.Ellipsis,
-                    maxLines = 1
+                    maxLines = 1,
+                    modifier = Modifier.weight(1f)
                 )
                 if (language != null) {
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
                         language,
                         style = MaterialTheme.typography.bodySmall,
-                        modifier = Modifier.weight(1f)
                     )
                 }
             }
@@ -83,7 +83,7 @@ internal fun RepositoryItem(
 @Composable
 private fun RepositoryItemPreview() {
     RepositoryItem(
-        name = "Google",
+        name = "Googledasdajsdhajkshdkjashdkjashdkajshdkjashdkjashdkjashdkjashdkajsh",
         language = "Java",
         description = "Google's search engine",
         stargazersCount = "46,292",
