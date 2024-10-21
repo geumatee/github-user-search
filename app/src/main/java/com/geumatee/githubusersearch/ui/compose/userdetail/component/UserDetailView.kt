@@ -25,8 +25,8 @@ internal fun UserDetailView(
     isLoading: Boolean,
     error: String?,
     name: String?,
-    followers: String,
-    following: String,
+    followers: Int?,
+    following: Int?,
     modifier: Modifier = Modifier
 ) {
     when (isLoading) {
@@ -53,19 +53,9 @@ internal fun UserDetailView(
                         name ?: "",
                         modifier = Modifier.weight(1f)
                     )
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text(followers)
-                        Text("followers")
-                    }
+                    StatCounter("followers", followers)
                     Spacer(modifier = Modifier.width(8.dp))
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text(following)
-                        Text("following")
-                    }
+                    StatCounter("following", following)
                 }
 
             else -> Column(
@@ -93,7 +83,7 @@ private fun UserDetailViewPreview() {
         isLoading = false,
         error = null,
         name = "Google",
-        followers = "46,292",
-        following = "0"
+        followers = 46292,
+        following = 0
     )
 }

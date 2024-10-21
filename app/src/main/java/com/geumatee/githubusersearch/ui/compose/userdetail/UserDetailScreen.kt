@@ -116,8 +116,8 @@ internal fun UserDetailScreen(
                         isLoading = userDetailState.isLoading,
                         error = userDetailState.error,
                         name = userDetailState.userDetail?.name,
-                        followers = userDetailState.userDetail?.followers.formatCommaSeparate(),
-                        following = userDetailState.userDetail?.following.formatCommaSeparate(),
+                        followers = userDetailState.userDetail?.followers,
+                        following = userDetailState.userDetail?.following,
                     )
                 }
                 repositoryList(repositories, onClick)
