@@ -78,7 +78,7 @@ internal fun UserDetailView(
     }
 }
 
-@Preview()
+@Preview
 @Composable
 private fun UserDetailViewPreview() {
     UserDetailView(

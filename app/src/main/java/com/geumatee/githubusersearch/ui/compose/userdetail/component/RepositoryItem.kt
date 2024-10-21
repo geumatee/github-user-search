@@ -83,7 +83,7 @@ internal fun RepositoryItem(
 @Composable
 private fun RepositoryItemPreview() {
     RepositoryItem(
-        name = "Googledasdajsdhajkshdkjashdkjashdkajshdkjashdkjashdkjashdkjashdkajsh",
+        name = "Google",
         language = "Java",
         description = "Google's search engine",
         stargazersCount = "46,292",
