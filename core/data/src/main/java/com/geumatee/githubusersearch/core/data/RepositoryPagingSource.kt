@@ -19,9 +19,9 @@ class RepositoryPagingSource @Inject constructor(
                 login = login,
                 perPage = pageSize,
                 page = nextPageNumber
-            ).filter { repository -> !repository.fork }
+            )
             LoadResult.Page(
-                data = response,
+                data = response.filter { repository -> !repository.fork },
                 prevKey = null,
                 nextKey = if (response.isNotEmpty()) nextPageNumber + 1 else null
             )
