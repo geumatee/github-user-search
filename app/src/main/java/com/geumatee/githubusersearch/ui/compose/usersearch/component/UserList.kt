@@ -15,7 +15,6 @@ import com.geumatee.githubusersearch.R
 import com.geumatee.githubusersearch.core.model.User
 import com.geumatee.githubusersearch.ui.compose.common.LoadMoreError
 import com.geumatee.githubusersearch.ui.compose.common.LoadingView
-import com.geumatee.githubusersearch.ui.compose.usersearch.UserItem
 import kotlinx.coroutines.flow.flowOf
 
 @Composable
