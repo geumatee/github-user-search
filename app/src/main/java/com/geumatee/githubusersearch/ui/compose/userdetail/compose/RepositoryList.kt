@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import com.geumatee.githubusersearch.R
-import com.geumatee.githubusersearch.datasource.model.Repository
+import com.geumatee.githubusersearch.core.model.Repository
 import com.geumatee.githubusersearch.ui.compose.userdetail.formatCommaSeparate
 import com.geumatee.githubusersearch.ui.compose.common.LoadMoreError
 import com.geumatee.githubusersearch.ui.compose.common.LoadingView

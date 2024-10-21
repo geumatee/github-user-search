@@ -6,8 +6,6 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
-    id("kotlinx-serialization")
-    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -43,12 +41,7 @@ android {
     }
     buildFeatures {
         compose = true
-        buildConfig = true
     }
-}
-
-secrets {
-    defaultPropertiesFileName = "secrets.defaults.properties"
 }
 
 
@@ -73,13 +66,11 @@ dependencies {
     implementation(libs.coil.kt.svg)
 
     implementation(libs.hilt.android)
+    implementation(project(":core:model"))
+    implementation(project(":core:network"))
+    implementation(project(":core:data"))
     testImplementation(libs.junit.jupiter)
     kapt(libs.hilt.compiler)
-
-    implementation(libs.okhttp.logging)
-    implementation(libs.retrofit.core)
-    implementation(libs.retrofit.kotlin.serialization)
-    implementation(libs.kotlinx.serialization.json)
 
     testImplementation(libs.junit)
     testImplementation(libs.hilt.android.testing)

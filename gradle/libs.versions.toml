@@ -12,14 +12,14 @@ androidxNavigation = "2.8.3"
 androidxPaging = "3.3.2"
 coil = "2.7.0"
 hilt = "2.52"
-hiltExt = "1.2.0"
 junit = "4.13.2"
 kotlin = "2.0.20"
-kotlinxSerializationJson = "1.6.3"
+kotlinxSerializationJson = "1.7.3"
 okhttp = "4.12.0"
 retrofit = "2.11.0"
 secrets = "2.0.1"
-junitJupiter = "5.8.1"
+junitJupiter = "5.11.2"
+jetbrainsKotlinJvm = "2.0.20"
 
 [libraries]
 androidx-browser = { group = "androidx.browser", name = "browser", version.ref = "androidxBrowser" }
@@ -46,9 +46,6 @@ coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
-hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }
-hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltExt" }
-hilt-ext-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltExt" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
@@ -58,9 +55,11 @@ junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.r
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 

@@ -29,7 +29,7 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import coil.compose.SubcomposeAsyncImage
 import com.geumatee.githubusersearch.R
-import com.geumatee.githubusersearch.datasource.model.User
+import com.geumatee.githubusersearch.core.model.User
 import com.geumatee.githubusersearch.ui.compose.common.NoResult
 import com.geumatee.githubusersearch.ui.compose.common.RefreshError
 import com.geumatee.githubusersearch.ui.compose.usersearch.compose.SearchTextField

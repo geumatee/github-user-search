@@ -12,7 +12,7 @@ import androidx.paging.PagingData
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.geumatee.githubusersearch.R
-import com.geumatee.githubusersearch.datasource.model.User
+import com.geumatee.githubusersearch.core.model.User
 import com.geumatee.githubusersearch.ui.compose.common.LoadMoreError
 import com.geumatee.githubusersearch.ui.compose.common.LoadingView
 import com.geumatee.githubusersearch.ui.compose.usersearch.UserItem

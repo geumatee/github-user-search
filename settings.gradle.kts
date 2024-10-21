@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "GitHub User Search"
 include(":app")
- 
+include(":core:network")
+include(":core:model")
+include(":core:data")

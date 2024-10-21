@@ -25,8 +25,8 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.geumatee.githubusersearch.datasource.model.Repository
-import com.geumatee.githubusersearch.datasource.model.UserDetail
+import com.geumatee.githubusersearch.core.model.Repository
+import com.geumatee.githubusersearch.core.model.UserDetail
 import com.geumatee.githubusersearch.ui.compose.userdetail.compose.BackIcon
 import com.geumatee.githubusersearch.ui.compose.userdetail.compose.UserDetailView
 import com.geumatee.githubusersearch.ui.compose.userdetail.compose.UserHeader

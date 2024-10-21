@@ -6,10 +6,10 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.geumatee.githubusersearch.datasource.model.Repository
-import com.geumatee.githubusersearch.repository.RepositoryPagingSource
-import com.geumatee.githubusersearch.repository.RepositoryRepository
-import com.geumatee.githubusersearch.repository.UserRepository
+import com.geumatee.githubusersearch.core.model.Repository
+import com.geumatee.githubusersearch.core.data.RepositoryPagingSource
+import com.geumatee.githubusersearch.core.data.RepositoryRepository
+import com.geumatee.githubusersearch.core.data.UserRepository
 import com.geumatee.githubusersearch.ui.compose.userdetail.model.UserDetailState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -52,7 +52,11 @@ class UserDetailViewModel @Inject constructor(
     @OptIn(ExperimentalCoroutinesApi::class)
     val repositoryPager: Flow<PagingData<Repository>> = login.flatMapLatest { login ->
         Pager(PagingConfig(pageSize = ITEM_PER_PAGE)) {
-            RepositoryPagingSource(repositoryRepository, login, ITEM_PER_PAGE)
+            RepositoryPagingSource(
+                repositoryRepository,
+                login,
+                ITEM_PER_PAGE
+            )
         }.flow
     }.cachedIn(viewModelScope)
 
