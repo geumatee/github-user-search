@@ -18,7 +18,11 @@ import com.geumatee.githubusersearch.R
 import com.geumatee.githubusersearch.core.model.User
 
 @Composable
-fun UserItem(user: User, onClick: (String) -> Unit = {}, modifier: Modifier = Modifier) {
+fun UserItem(
+    user: User,
+    onClick: (Int, String, String) -> Unit = { _, _, _ -> },
+    modifier: Modifier = Modifier
+) {
     ListItem(
         leadingContent = {
             SubcomposeAsyncImage(
@@ -35,11 +39,15 @@ fun UserItem(user: User, onClick: (String) -> Unit = {}, modifier: Modifier = Mo
                     .clip(CircleShape)
             )
         },
-        headlineContent = { Text(text = user.login) },
+        headlineContent = {
+            Text(
+                text = user.login
+            )
+        },
         modifier = modifier
             .fillMaxWidth()
             .clickable {
-                onClick(user.login)
+                onClick(user.id, user.login, user.avatarUrl)
             }
     )
 }
@@ -53,6 +61,6 @@ private fun UserItemPreview() {
             login = "geumatee",
             id = 1,
             avatarUrl = "https://avatars.githubusercontent.com/u/1?v=4"
-        )
+        ),
     )
 }

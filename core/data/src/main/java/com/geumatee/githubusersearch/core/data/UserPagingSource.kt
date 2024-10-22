@@ -19,7 +19,7 @@ class UserPagingSource @Inject constructor(
         val nextPageNumber = params.key ?: 1
         return try {
             val response = userRepository.searchUsers(query, pageSize, nextPageNumber)
-            totalCount += response.items.size;
+            totalCount += response.items.size
             LoadResult.Page(
                 data = response.items,
                 prevKey = null,

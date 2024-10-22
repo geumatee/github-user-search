@@ -27,8 +27,7 @@ class UserDetailViewModel @Inject constructor(
     private val userRepository: UserRepository,
     private val repositoryRepository: RepositoryRepository
 ) : ViewModel() {
-    var login = MutableStateFlow("")
-        private set
+    private var login = MutableStateFlow("")
     val userDetailState: StateFlow<UserDetailState> = login.map {
         try {
             val userDetail = userRepository.getUserDetail(it)
@@ -36,7 +35,7 @@ class UserDetailViewModel @Inject constructor(
                 isLoading = false,
                 userDetail = userDetail
             )
-        } catch(e: Exception) {
+        } catch (e: Exception) {
             UserDetailState(
                 isLoading = false,
                 userDetail = null,

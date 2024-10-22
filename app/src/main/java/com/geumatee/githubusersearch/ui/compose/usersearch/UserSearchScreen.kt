@@ -32,15 +32,15 @@ import kotlinx.coroutines.flow.flowOf
 internal fun UserSearchRoute(
     userSearchViewModel: UserSearchViewModel = hiltViewModel(),
     modifier: Modifier = Modifier,
-    onClick: (String) -> Unit = {},
+    onClick: (Int, String, String) -> Unit = { _,_, _ -> },
 ) {
     val users = userSearchViewModel.userPager.collectAsLazyPagingItems()
     val query = userSearchViewModel.query.collectAsState().value
     UserSearchScreen(
-        modifier = modifier,
         query = query,
         onSearchQueryChanged = userSearchViewModel::setQuery,
         users = users,
+        modifier = modifier,
         onClick = onClick
     )
 }
@@ -48,11 +48,11 @@ internal fun UserSearchRoute(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun UserSearchScreen(
-    modifier: Modifier = Modifier,
     query: String,
     onSearchQueryChanged: (String) -> Unit = {},
     users: LazyPagingItems<User>,
-    onClick: (String) -> Unit = {},
+    modifier: Modifier = Modifier,
+    onClick: (Int, String, String) -> Unit = { _, _, _ -> },
 ) {
     Scaffold(modifier = modifier.fillMaxSize()) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
@@ -83,7 +83,10 @@ internal fun UserSearchScreen(
                             }
 
                             false -> {
-                                UserList(users = users, onClick = onClick)
+                                UserList(
+                                    users = users,
+                                    onClick = onClick
+                                )
                             }
                         }
                     }
@@ -121,6 +124,6 @@ private fun UserSearchScreenPreview() {
                     prepend = LoadState.NotLoading(false),
                 ),
             )
-        ).collectAsLazyPagingItems()
+        ).collectAsLazyPagingItems(),
     )
 }

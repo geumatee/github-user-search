@@ -2,7 +2,7 @@ package com.geumatee.githubusersearch.core.model
 
 import kotlinx.serialization.Serializable
 
-@Serializable()
+@Serializable
 data class UserSearchResponse(
     val totalCount: Int,
     val incompleteResults: Boolean,

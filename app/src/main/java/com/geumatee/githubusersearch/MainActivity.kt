@@ -9,8 +9,11 @@ import androidx.browser.customtabs.CustomTabsIntent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import com.geumatee.githubusersearch.ui.compose.userdetail.UserDetailRoute
 import com.geumatee.githubusersearch.ui.compose.usersearch.UserSearchRoute
+import com.geumatee.githubusersearch.ui.navigation.model.UserDetailRoute
+import com.geumatee.githubusersearch.ui.navigation.model.UserSearchRoute
 import com.geumatee.githubusersearch.ui.theme.GitHubUserSearchTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,17 +26,26 @@ class MainActivity : ComponentActivity() {
         setContent {
             GitHubUserSearchTheme {
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = "user_search") {
-                    composable("user_search") {
+                NavHost(navController = navController, startDestination = UserSearchRoute) {
+                    composable<UserSearchRoute> {
                         UserSearchRoute(
-                            onClick = { login ->
-                                navController.navigate("user_detail/$login")
-                            })
+                            onClick = { id, login, avatarUrl ->
+                                navController.navigate(
+                                    UserDetailRoute(
+                                        id = id,
+                                        login = login,
+                                        avatarUrl = avatarUrl,
+                                    )
+                                )
+                            },
+                        )
                     }
-                    composable("user_detail/{login}") {
-                        val login = it.arguments?.getString("login") ?: return@composable
+                    composable<UserDetailRoute> { backStackEntry ->
+                        val userDetailRoute = backStackEntry.toRoute<UserDetailRoute>()
                         UserDetailRoute(
-                            login = login,
+                            id = userDetailRoute.id,
+                            login = userDetailRoute.login,
+                            avatarUrl = userDetailRoute.avatarUrl,
                             navigateBack = { navController.popBackStack() },
                             onClick = { repositoryUrl ->
                                 val intent = CustomTabsIntent.Builder()
@@ -43,6 +55,7 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                 }
+
             }
         }
     }

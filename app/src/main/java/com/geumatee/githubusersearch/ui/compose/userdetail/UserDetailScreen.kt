@@ -37,7 +37,9 @@ import java.text.DecimalFormat
 
 @Composable
 internal fun UserDetailRoute(
+    id: Int,
     login: String,
+    avatarUrl: String?,
     userDetailViewModel: UserDetailViewModel = hiltViewModel(),
     modifier: Modifier = Modifier,
     navigateBack: () -> Unit = {},
@@ -49,7 +51,9 @@ internal fun UserDetailRoute(
     userDetailViewModel.setLogin(login)
 
     UserDetailScreen(
+        id = id,
         login = login,
+        avatarUrl = avatarUrl,
         userDetailState = userDetailState,
         repositories = repositories,
         modifier = modifier,
@@ -59,10 +63,14 @@ internal fun UserDetailRoute(
 }
 
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
+@OptIn(
+    ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class
+)
 @Composable
 internal fun UserDetailScreen(
+    id: Int,
     login: String,
+    avatarUrl: String?,
     userDetailState: UserDetailState,
     repositories: LazyPagingItems<Repository>,
     modifier: Modifier = Modifier,
@@ -82,7 +90,12 @@ internal fun UserDetailScreen(
                     BackIcon(navigateBack)
                 },
                 title = {
-                    UserHeader(login, userDetailState.userDetail?.avatarUrl, scrollBehavior)
+                    UserHeader(
+                        id,
+                        login,
+                        avatarUrl,
+                        scrollBehavior,
+                    )
                 },
                 scrollBehavior = scrollBehavior
             )
@@ -131,7 +144,9 @@ internal fun UserDetailScreen(
 @Composable
 private fun UserDetailScreenPreview() {
     UserDetailScreen(
+        id = 1,
         login = "google",
+        avatarUrl = "https://avatars.githubusercontent.com/u/1342004?v=4",
         userDetailState = UserDetailState(
             isLoading = false,
             userDetail = UserDetail(

@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.flowOf
 @Composable
 internal fun UserList(
     users: LazyPagingItems<User>,
-    onClick: (String) -> Unit = {},
+    onClick: (Int, String, String) -> Unit = { _, _, _ -> },
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(modifier = modifier.fillMaxSize()) {
@@ -28,7 +28,12 @@ internal fun UserList(
             count = users.itemCount,
             key = { users[it]?.id ?: 0 }
         ) { index ->
-            users[index]?.let { UserItem(user = it, onClick = onClick) }
+            users[index]?.let {
+                UserItem(
+                    user = it,
+                    onClick = onClick
+                )
+            }
         }
         item {
             when (users.loadState.append) {

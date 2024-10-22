@@ -29,6 +29,7 @@ import com.geumatee.githubusersearch.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserHeader(
+    id: Int,
     login: String,
     avatarUrl: String?,
     scrollBehavior: TopAppBarScrollBehavior,
@@ -73,5 +74,5 @@ fun UserHeader(
 @Composable
 private fun UserHeaderPreview() {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
-    UserHeader(login = "geumatee", avatarUrl = null, scrollBehavior = scrollBehavior)
+    UserHeader(id = 0, login = "geumatee", avatarUrl = null, scrollBehavior = scrollBehavior)
 }
