@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
     id("kotlinx-serialization")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
@@ -51,7 +51,7 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(project(":core:model"))
     testImplementation(libs.junit.jupiter)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(libs.okhttp.logging)
     implementation(libs.retrofit.core)
@@ -59,14 +59,10 @@ dependencies {
 
     testImplementation(libs.junit)
     testImplementation(libs.hilt.android.testing)
-    kaptTest(libs.hilt.compiler)
+    kspTest(libs.hilt.compiler)
 
     androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    kaptAndroidTest(libs.hilt.compiler)
-}
-
-kapt {
-    correctErrorTypes = true
+    kspAndroidTest(libs.hilt.compiler)
 }
