@@ -34,7 +34,9 @@ internal fun LazyListScope.repositoryList(
             when (repositories.itemCount == 0) {
                 true -> {
                     item {
-                        NoResult()
+                        NoResult(
+                            text = stringResource(R.string.no_repository_results)
+                        )
                     }
                 }
 

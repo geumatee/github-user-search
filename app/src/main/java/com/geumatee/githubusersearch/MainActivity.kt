@@ -6,6 +6,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -26,37 +29,42 @@ class MainActivity : ComponentActivity() {
         setContent {
             GitHubUserSearchTheme {
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = UserSearchRoute) {
-                    composable<UserSearchRoute> {
-                        UserSearchRoute(
-                            onClick = { id, login, avatarUrl ->
-                                navController.navigate(
-                                    UserDetailRoute(
-                                        id = id,
-                                        login = login,
-                                        avatarUrl = avatarUrl,
-                                    )
-                                )
-                            },
-                        )
-                    }
-                    composable<UserDetailRoute> { backStackEntry ->
-                        val userDetailRoute = backStackEntry.toRoute<UserDetailRoute>()
-                        UserDetailRoute(
-                            id = userDetailRoute.id,
-                            login = userDetailRoute.login,
-                            avatarUrl = userDetailRoute.avatarUrl,
-                            navigateBack = { navController.popBackStack() },
-                            onClick = { repositoryUrl ->
-                                val intent = CustomTabsIntent.Builder()
-                                    .build()
-                                intent.launchUrl(this@MainActivity, Uri.parse(repositoryUrl))
-                            }
-                        )
-                    }
-                }
-
+                AppNavHost(navController = navController)
             }
+        }
+    }
+}
+
+@Composable
+fun AppNavHost(navController: NavHostController) {
+    val context = LocalContext.current
+    NavHost(navController = navController, startDestination = UserSearchRoute) {
+        composable<UserSearchRoute> {
+            UserSearchRoute(
+                onClick = { id, login, avatarUrl ->
+                    navController.navigate(
+                        UserDetailRoute(
+                            id = id,
+                            login = login,
+                            avatarUrl = avatarUrl,
+                        )
+                    )
+                },
+            )
+        }
+        composable<UserDetailRoute> { backStackEntry ->
+            val userDetailRoute = backStackEntry.toRoute<UserDetailRoute>()
+            UserDetailRoute(
+                id = userDetailRoute.id,
+                login = userDetailRoute.login,
+                avatarUrl = userDetailRoute.avatarUrl,
+                navigateBack = { navController.popBackStack() },
+                onClick = { repositoryUrl ->
+                    val intent = CustomTabsIntent.Builder()
+                        .build()
+                    intent.launchUrl(context, Uri.parse(repositoryUrl))
+                }
+            )
         }
     }
 }

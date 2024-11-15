@@ -15,7 +15,10 @@ import androidx.compose.ui.unit.dp
 import com.geumatee.githubusersearch.R
 
 @Composable
-internal fun NoResult(modifier: Modifier = Modifier) {
+internal fun NoResult(
+    text: String,
+    modifier: Modifier = Modifier
+) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -24,7 +27,7 @@ internal fun NoResult(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = stringResource(R.string.no_results),
+            text = text,
             textAlign = TextAlign.Center
         )
     }
@@ -33,5 +36,7 @@ internal fun NoResult(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 private fun NoResultPreview() {
-    NoResult()
+    NoResult(
+        text = stringResource(R.string.no_user_results)
+    )
 }

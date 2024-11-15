@@ -59,6 +59,7 @@ internal fun SearchTextField(
                     onClick = {
                         onQueryChanged("")
                     },
+                    modifier = Modifier.testTag("clearSearchText")
                 ) {
                     Icon(
                         imageVector = Icons.Rounded.Close,

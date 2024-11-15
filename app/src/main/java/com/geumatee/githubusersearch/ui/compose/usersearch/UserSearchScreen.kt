@@ -79,7 +79,9 @@ internal fun UserSearchScreen(
                     else -> {
                         when (users.itemCount == 0) {
                             true -> {
-                                NoResult()
+                                NoResult(
+                                    text = stringResource(R.string.no_user_results)
+                                )
                             }
 
                             false -> {

@@ -51,9 +51,9 @@ internal fun UserDetailRoute(
     userDetailViewModel.setLogin(login)
 
     UserDetailScreen(
-        id = id,
+        id = userDetailState.userDetail?.id ?: id,
         login = login,
-        avatarUrl = avatarUrl,
+        avatarUrl = userDetailState.userDetail?.avatarUrl ?: avatarUrl,
         userDetailState = userDetailState,
         repositories = repositories,
         modifier = modifier,

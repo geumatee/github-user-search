@@ -1,19 +1,23 @@
 [versions]
-agp = "8.7.1"
+agp = "8.7.2"
 androidxBrowser = "1.8.0"
-androidxCore = "1.13.1"
+androidxCore = "1.15.0"
 androidxJunit = "1.2.1"
 androidxEspressoCore = "3.6.1"
 androidxLifecycleRuntimeKtx = "2.8.7"
 androidxActivityCompose = "1.9.3"
-androidxComposeBom = "2024.10.01"
+androidxComposeBom = "2024.11.00"
 androidxHiltNavigationCompose = "1.2.0"
-androidxNavigation = "2.8.3"
-androidxPaging = "3.3.2"
+androidxNavigation = "2.8.4"
+androidxPaging = "3.3.4"
+androidxTestCore = "1.6.1"
+androidxTestMonitor = "1.7.2"
+androidxTestExpresso = "3.6.1"
 coil = "2.7.0"
 hilt = "2.52"
 junit = "4.13.2"
 kotlin = "2.0.20"
+kotlinxCoroutinesTest = "1.9.0"
 kotlinxSerializationJson = "1.7.3"
 ksp = "2.0.20-1.0.25"
 okhttp = "4.12.0"
@@ -32,8 +36,12 @@ androidx-activity-compose = { group = "androidx.activity", name = "activity-comp
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
+androidx-navigation-test = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxNavigation" }
 androidx-paging = { group = "androidx.paging", name = "paging-runtime", version.ref = "androidxPaging" }
 androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "androidxPaging" }
+androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidxTestCore" }
+androidx-test-monitor = { group = "androidx.test", name = "monitor", version.ref = "androidxTestMonitor" }
+androidx-test-expresso-intents = { group = "androidx.test.espresso", name = "espresso-intents", version.ref = "androidxTestExpresso" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -48,6 +56,7 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }

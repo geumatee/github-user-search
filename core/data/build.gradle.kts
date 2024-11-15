@@ -42,11 +42,13 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(project(":core:network"))
     implementation(project(":core:model"))
+    implementation(libs.hilt.android.testing)
     testImplementation(libs.junit.jupiter)
     ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)
     testImplementation(libs.hilt.android.testing)
+    testImplementation(libs.kotlinx.coroutines.test)
     kspTest(libs.hilt.compiler)
 
     androidTestImplementation(libs.hilt.android.testing)
