@@ -4,8 +4,10 @@ package com.geumatee.githubusersearch
 import android.content.Intent
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.ExperimentalTestApi
+import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsNotDisplayed
+import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
@@ -61,6 +63,7 @@ class InstrumentedTest {
             .assertIsDisplayed()
         composeTestRule.onNodeWithTag("clearSearchText").assertIsNotDisplayed()
         composeTestRule.onNodeWithTag("searchTextField").performTextInput("goog")
+        composeTestRule.onNodeWithTag("searchTextField").assert(hasText("goog"))
         composeTestRule.waitUntilDoesNotExist(
             matcher = hasText("There is no user record corresponding to this query.")
         )
@@ -70,8 +73,25 @@ class InstrumentedTest {
 
     @OptIn(ExperimentalTestApi::class)
     @Test
+    fun clearSearchTextTest() {
+        composeTestRule.onNodeWithTag("searchTextField").performTextInput("goog")
+        composeTestRule.waitUntilDoesNotExist(
+            matcher = hasText("There is no user record corresponding to this query.")
+        )
+        composeTestRule.onNodeWithTag("clearSearchText").performClick()
+        composeTestRule.waitUntilAtLeastOneExists(
+            matcher = hasText("There is no user record corresponding to this query.")
+        )
+        composeTestRule.onNodeWithTag("searchTextField").assert(hasText(""))
+        composeTestRule.onNodeWithTag("clearSearchText")
+            .assertIsNotDisplayed()
+    }
+
+    @OptIn(ExperimentalTestApi::class)
+    @Test
     fun clickUser_navigateUserDetailTest() {
         composeTestRule.onNodeWithTag("searchTextField").performTextInput("goog")
+        composeTestRule.onNodeWithTag("searchTextField").assert(hasText("goog"))
         composeTestRule.waitUntilDoesNotExist(
             matcher = hasText("There is no user record corresponding to this query.")
         )
@@ -85,6 +105,7 @@ class InstrumentedTest {
     @Test
     fun userDetail_showRepository_openRepositoryUrlTest() {
         composeTestRule.onNodeWithTag("searchTextField").performTextInput("goog")
+        composeTestRule.onNodeWithTag("searchTextField").assert(hasText("goog"))
         composeTestRule.waitUntilDoesNotExist(
             matcher = hasText("There is no user record corresponding to this query.")
         )
